@@ -1,0 +1,21 @@
+def get_integer(min_value, max_value):
+    attempts = 0
+    while attempts < 3:
+        try:
+            user_input = int(input(f"Please enter an integer between {min_value} and {max_value}: "))
+            if min_value <= user_input <= max_value:
+                return user_input
+            else:
+                print(f"Input must be between {min_value} and {max_value}.")
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+        attempts += 1
+    print("None")
+
+if __name__ == "__main__":
+    min_value = 1
+    max_value = 100
+    result = get_integer(min_value, max_value)
+    if result is not None:
+        print("User input:", result)
+# please note I have reaserched some of the issues to help me fix 
